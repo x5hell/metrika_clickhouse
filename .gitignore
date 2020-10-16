@@ -1,0 +1,6 @@
+.idea
+clickhouse\clickhouse_database
+clickhouse\logs_api_integration
+config.env
+# for Vim users
+.*.sw?

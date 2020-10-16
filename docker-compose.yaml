@@ -17,3 +17,5 @@ services:
     volumes:
       - ./clickhouse/clickhouse_database/:/var/lib/clickhouse # данные clickhouse
       - ./clickhouse/logs_api_integration/:/usr/src # код проекта logs_api_integration
+    env_file:
+      - "./config.env"
