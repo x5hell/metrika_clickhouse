@@ -1,3 +1,0 @@
-[submodule "tabix"]
-	path = tabix
-	url = https://github.com/tabixio/tabix
