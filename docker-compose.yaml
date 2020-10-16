@@ -19,14 +19,14 @@ services:
       - ./clickhouse/logs_api_integration/:/usr/src # код проекта logs_api_integration
     env_file:
       - "./config.env"
-	ports:
+    ports:
       - 8123:8123
   # clickhouse gui
   tabix:
     container_name: tabix
     build:
       context: ./tabix
-	env_file:
+    env_file:
       - "./env/tabix.env"
     ports:
       - 8080:80
