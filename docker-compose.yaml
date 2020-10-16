@@ -4,7 +4,7 @@ networks:
   default:
 
 services:
-  # Memcache сервер для API
+  # server clickhouse
   clickhouse:
     container_name: clickhouse
     image: yandex/clickhouse-server:20.6.8
@@ -19,3 +19,14 @@ services:
       - ./clickhouse/logs_api_integration/:/usr/src # код проекта logs_api_integration
     env_file:
       - "./config.env"
+	ports:
+      - 8123:8123
+  # clickhouse gui
+  tabix:
+    container_name: tabix
+    build:
+      context: ./tabix
+	env_file:
+      - "./env/tabix.env"
+    ports:
+      - 8080:80
