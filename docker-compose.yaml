@@ -23,9 +23,10 @@ services:
       - 8123:8123
   # clickhouse gui
   tabix:
+    image: spoonest/clickhouse-tabix-web-client:stable
     container_name: tabix
-    build:
-      context: ./tabix
+    #build:
+    #  context: ./tabix
     env_file:
       - "./env/tabix.env"
     ports:
