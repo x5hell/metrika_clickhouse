@@ -1,6 +1,7 @@
 FROM yandex/clickhouse-server:20.6.8
 
 COPY ./run/run.sh /run/run.sh
+COPY ./run/pull_data.sh /run/pull_data.sh
 
 RUN apt-get update && \
   apt-get -y install python2 curl git nano && \

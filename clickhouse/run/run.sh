@@ -9,8 +9,6 @@ if [[ ! -e "/usr/src/configs/config.json.example" ]]; then
     sed -i "s/<your_counter_id>/${METRIKA_COUNTER_ID}/" /usr/src/configs/config.json
     sed -i "s/<table_visits_all_field_list>/${VISITS_ALL_FIELDS}/" /usr/src/configs/config.json
     sed -i "s/<table_hits_all_field_list>/${HITS_ALL_FIELDS}/" /usr/src/configs/config.json
-    START_DATE=$(date  --date="14 days ago" +"%F")
-    END_DATE=$(date  --date="1 days ago" +"%F")
-    python2 metrica_logs_api.py -source visits -start_date $START_DATE -end_date $END_DATE
+	/run/pull_data.sh>/var/logs/pull_data.log&
 fi
 /entrypoint.sh
