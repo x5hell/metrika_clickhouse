@@ -30,4 +30,4 @@ services:
     env_file:
       - "./env/tabix.env"
     ports:
-      - 8080:80
+      - 8800:80
